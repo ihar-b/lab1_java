@@ -12,10 +12,13 @@ import lombok.ToString;
 
 public abstract class Saw {
     protected String brand;
-    protected     int power;
-    protected     int timeWorking;
-    protected    boolean isWorking = false;
-    public abstract void Start();
-    public abstract void Stop();
-    public abstract void getRemainingWorkTime();
+    protected int power;
+    protected int timeWorking;
+    protected boolean isWorking = false;
+
+ public abstract void start();
+
+    public abstract void stop();
+
+    public abstract int getRemainingWorkTime();
 }
