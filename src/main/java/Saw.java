@@ -16,9 +16,20 @@ public abstract class Saw {
     protected int timeWorking;
     protected boolean isWorking = false;
 
- public abstract void start();
+    public abstract void start();
 
     public abstract void stop();
 
-    public abstract int getRemainingWorkTime();
+    public abstract double getRemainingWorkTime();
+    public String getHeaders() {
+        return "brand, power, isWorking, timeWorking";
+    }
+
+    public String toCSV() {
+        return  brand + "," +
+                power + "," +
+                isWorking + "," +
+                timeWorking + ",";
+
+    }
 }

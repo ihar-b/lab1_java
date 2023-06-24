@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class CompactCircularSawTest {
 
     private CompactCircularSaw compactCircularSaw;
@@ -24,18 +26,10 @@ class CompactCircularSawTest {
     }
 
     @Test
-    void testGetRemainingWorkTimeWhileWorking() {
-        compactCircularSaw.start();
-        int remainingTime = compactCircularSaw.getRemainingWorkTime();
-        Assertions.assertFalse(remainingTime > 0 && remainingTime <= 10);
+    void testGetRemainingWorkTime() {
+        final double trueRemainingWorkTime = 8.0;
+        assertEquals(trueRemainingWorkTime, compactCircularSaw.getRemainingWorkTime());
     }
-
-    @Test
-    void testGetRemainingWorkTimeWhileNotWorking() {
-        int remainingTime = compactCircularSaw.getRemainingWorkTime();
-        Assertions.assertEquals(0, remainingTime);
-    }
-
     @Test
     void testToString() {
         String expectedString = "brand: Brand power: 100 isWorking: false batteryCapacity: 500 radius: 5.0 timeWorking: 10";
